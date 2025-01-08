@@ -18,7 +18,46 @@ class Solution(object):
 
 Q.2 Find n unique integers sum up to zero
 
+O(N)
+
+```python
+class Solution(object):
+    def sumZero(self, n):
+        """
+        :type n: int
+        :rtype: List[int]
+        """
+        ans=[]
+        if n%2!=0:
+            ans.append(0)
+        for i in range(1,(n//2)+1):
+                ans.append(i)
+                ans.append(-i)
+        return ans
+        
+```
+
 Q.3 Maximum Subarray
+
+```python
+class Solution:
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        maxSum = nums[0]
+        currentSum = nums[0]
+
+        for num in nums[1:]:
+            
+            currentSum = max(num, currentSum + num)
+            # Update maxSum if currentSum is larger
+            maxSum = max(maxSum, currentSum)
+
+        return maxSum
+
+```
 
 Q.4 3Sum
 
@@ -65,7 +104,6 @@ class Solution(object):
 ```
 
 Q.8 Search in rotated sorted array
-
 Q.9 Search insert position 
 
 ```python
